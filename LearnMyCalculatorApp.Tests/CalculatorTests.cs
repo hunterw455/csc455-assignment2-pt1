@@ -104,5 +104,7 @@ namespace LearnMyCalculatorApp.Tests
             var actual = calculator.Add(x, y);
             Assert.AreEqual(expected, actual);
         }
+
+        //  Couldn't add the fakes as I don't have Visual Studio Enterprise
     }
 }
