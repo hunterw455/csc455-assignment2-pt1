@@ -25,5 +25,18 @@ namespace LearnMyCalculatorApp.Tests
             // Assert
             Assert.AreEqual(2, actual);
         }
+
+        [TestMethod]
+        public void SubtractTest()
+        {
+            // Arrange
+            var calculator = new Calculator();
+
+            // Act
+            var actual = calculator.Subtract(1, 1);
+
+            // Assert
+            Assert.AreEqual(0, actual);
+        }
     }
 }
