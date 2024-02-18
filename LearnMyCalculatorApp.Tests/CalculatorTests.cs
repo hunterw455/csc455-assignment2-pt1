@@ -51,5 +51,18 @@ namespace LearnMyCalculatorApp.Tests
             // Assert
             Assert.AreEqual(1, actual);
         }
+
+        [TestMethod]
+        public void DivideTest()
+        {
+            // Arrange
+            var calculator = new Calculator();
+
+            // Act
+            var actual = calculator.Divide(1, 1);
+
+            // Assert
+            Assert.AreEqual(1, actual);
+        }
     }
 }
