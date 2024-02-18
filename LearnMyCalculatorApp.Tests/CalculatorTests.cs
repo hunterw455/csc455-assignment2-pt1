@@ -1,5 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using LearnMyCalculatorApp;
+using FluentAssertions;
 
 namespace LearnMyCalculatorApp.Tests
 {
@@ -77,5 +78,33 @@ namespace LearnMyCalculatorApp.Tests
             // Assert
             Assert.IsNull(actual);
         }
+
+        [TestMethod]
+        public void AddTestFluentassertion()
+        {
+            var calculator = new Calculator();
+            var actual = calculator.Add(1, 1);
+
+            // Non-fluent asserts:
+            // Assert.AreEqual(actual, 2);
+            // Assert.AreNotEqual(actual, 1);
+
+            // Same asserts as what is commented out above, but using Fluent Assertions
+            actual.Should().Be(2).And.NotBe(1);
+        }
+
+        [DataTestMethod]
+        [DataRow(1, 1, 2)]
+        [DataRow(2, 2, 4)]
+        [DataRow(3, 3, 6)]
+        [DataRow(0, 0, 1)] // The test run with this row fails
+        public void AddDataTests(int x, int y, int expected)
+        {
+            var calculator = new Calculator();
+            var actual = calculator.Add(x, y);
+            Assert.AreEqual(expected, actual);
+        }
+
+        //  Couldn't add the fakes as I don't have Visual Studio Enterprise
     }
 }
