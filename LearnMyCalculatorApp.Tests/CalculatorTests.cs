@@ -1,5 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using LearnMyCalculatorApp;
+using FluentAssertions;
 
 namespace LearnMyCalculatorApp.Tests
 {
@@ -76,6 +77,20 @@ namespace LearnMyCalculatorApp.Tests
 
             // Assert
             Assert.IsNull(actual);
+        }
+
+        [TestMethod]
+        public void AddTestFluentassertion()
+        {
+            var calculator = new Calculator();
+            var actual = calculator.Add(1, 1);
+
+            // Non-fluent asserts:
+            // Assert.AreEqual(actual, 2);
+            // Assert.AreNotEqual(actual, 1);
+
+            // Same asserts as what is commented out above, but using Fluent Assertions
+            actual.Should().Be(2).And.NotBe(1);
         }
     }
 }
