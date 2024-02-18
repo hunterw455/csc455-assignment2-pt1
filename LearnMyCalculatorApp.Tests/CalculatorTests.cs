@@ -38,5 +38,18 @@ namespace LearnMyCalculatorApp.Tests
             // Assert
             Assert.AreEqual(0, actual);
         }
+
+        [TestMethod]
+        public void MultiplyTest()
+        {
+            // Arrange
+            var calculator = new Calculator();
+
+            // Act
+            var actual = calculator.Multiply(1, 1);
+
+            // Assert
+            Assert.AreEqual(1, actual);
+        }
     }
 }
